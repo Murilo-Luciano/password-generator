@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <h1>Password Generator</h1>
       {/**@todo: dont use a <input/>, use a div */}
-      <input type="text" value="senha" />
+      <input type="text" value="" />
       {/* refresh button */}
       <button>Copy</button>
       {/* slider */}
