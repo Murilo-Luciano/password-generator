@@ -91,6 +91,8 @@ function getRandomOnRange(max: number, min: number) {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log("AQUI !!!!!!!!!!!!!!!1");
+
   if (req.method == "GET") {
     const { length, hasUppercase, hasLowercase, hasNumber, hasSymbols } =
       req.query;
@@ -112,4 +114,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 }
 
 // http://localhost:3000/api/passwordGenerator?teste=true
-// http://localhost:3000/api/passwordGenerator?length=10&hasUppercase=true&hasLowercase=true&hasNumber=true&hasSymbol
+// http://localhost:3000/api/passwordGenerator?length=10&hasUppercase=true&hasLowercase=true&hasNumber=true&hasSymbol=true
