@@ -4,6 +4,7 @@ const PasswordDisplay = (props: { password: string }) => {
       style={{
         display: "flex",
         flexDirection: "row",
+        marginBottom: "40px",
       }}
     >
       <div

@@ -9,9 +9,14 @@ const PasswordOptions = () => {
   const [hasNumbers, setHasNumbers] = useState(false);
   const [hasSymbols, setHasSymbols] = useState(false);
 
+  // const handleOptionChange = (optionName, value) => {
+
+  // }
+
   return (
     <div>
       <Slider
+        style={{ marginBottom: "10px" }}
         trackStyle={{ backgroundColor: "red" }}
         handleStyle={{ backgroundColor: "red", borderColor: "black" }}
         min={10}
@@ -20,7 +25,11 @@ const PasswordOptions = () => {
       <label>
         <input
           type="checkbox"
-          onChange={(event) => setHasUppercase(event.target.checked)}
+          name="TESTANDO"
+          onChange={(event) => {
+            console.log(event);
+            setHasUppercase(event.target.checked);
+          }}
         />
         Uppercase
       </label>
