@@ -1,4 +1,4 @@
-import { Slider } from "@mui/material";
+import { Checkbox, FormControlLabel, FormGroup, Slider } from "@mui/material";
 import React from "react";
 
 export default function Home() {
@@ -14,7 +14,6 @@ export default function Home() {
           <div className="copyButton">COPY</div>
         </div>
         <div className="passwordOptionsContainer">
-          {/* <div className="slider"></div> */}
           <Slider
             sx={{
               color: "#BA4949",
@@ -27,21 +26,21 @@ export default function Home() {
             }}
           />
           <div className="checkboxContainer">
-            <div>
-              <input type={"checkbox"} />
-              <label>Number</label>
+            <div className="checkbox">
+              <Checkbox sx={{ color: "white" }} />
+              Number
             </div>
-            <div>
-              <input type={"checkbox"} />
-              <label>Symbol</label>
+            <div className="checkbox">
+              <Checkbox sx={{ color: "white" }} />
+              Symbol
             </div>
-            <div>
-              <input type={"checkbox"} />
-              <label>Lowercase</label>
+            <div className="checkbox">
+              <Checkbox sx={{ color: "white" }} />
+              Lowercase
             </div>
-            <div>
-              <input type={"checkbox"} />
-              <label>Uppercase</label>
+            <div className="checkbox">
+              <Checkbox sx={{ color: "white" }} />
+              Uppercase
             </div>
           </div>
         </div>
