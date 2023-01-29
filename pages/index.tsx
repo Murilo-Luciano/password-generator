@@ -1,21 +1,45 @@
 import { Checkbox, Slider } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { GrRefresh } from "react-icons/gr";
 
 export default function Home() {
+  const [passwordLength, setPasswordLength] = useState(10);
+  const [hasNumber, setHasNumber] = useState(true);
+  const [hasSymbol, setHasSymbol] = useState(true);
+  const [hasLowercase, setHasLowercase] = useState(true);
+  const [hasUppercase, setHasUppercase] = useState(true);
+  const [password, setPassword] = useState();
+
+  const getPassword = async () => {
+    const res = await fetch(
+      `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
+    );
+
+    setPassword((await res.json()).password);
+  };
+
+  useEffect(() => {
+    getPassword();
+  }, [passwordLength, hasNumber, hasSymbol, hasLowercase, hasUppercase]);
+
   return (
     <>
       <div className="header">Password Generator</div>
       <div className="contentContainer">
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
-            {"kjsa$jimd(i&"}
+            {password}
             <IconContext.Provider value={{ className: "icon" }}>
               <GrRefresh />
             </IconContext.Provider>
           </div>
-          <div className="copyButton">COPY</div>
+          <div
+            className="copyButton"
+            onClick={() => navigator.clipboard.writeText(password!)}
+          >
+            COPY
+          </div>
         </div>
         <div className="passwordOptionsContainer">
           <Slider
@@ -23,6 +47,7 @@ export default function Home() {
             max={50}
             min={1}
             defaultValue={10}
+            onChange={(_, value) => setPasswordLength(value as number)}
             sx={{
               color: "#BA4949",
               "& .MuiSlider-rail": {
@@ -44,6 +69,7 @@ export default function Home() {
                       color: "white",
                     },
                   }}
+                  onChange={(_, checked) => setHasNumber(checked)}
                 />
                 Number
               </div>
@@ -56,6 +82,7 @@ export default function Home() {
                       color: "white",
                     },
                   }}
+                  onChange={(_, checked) => setHasSymbol(checked)}
                 />
                 Symbol
               </div>
@@ -70,6 +97,7 @@ export default function Home() {
                       color: "white",
                     },
                   }}
+                  onChange={(_, checked) => setHasLowercase(checked)}
                 />
                 Lowercase
               </div>
@@ -82,6 +110,7 @@ export default function Home() {
                       color: "white",
                     },
                   }}
+                  onChange={(_, checked) => setHasUppercase(checked)}
                 />
                 Uppercase
               </div>

@@ -13,14 +13,14 @@ export interface PasswordOptionProps {
   hasNumber: boolean;
   hasUppercase: boolean;
   hasLowercase: boolean;
-  hasSymbols: boolean;
+  hasSymbol: boolean;
 }
 
 const initialOptions = {
   hasNumber: true,
   hasUppercase: true,
   hasLowercase: true,
-  hasSymbols: true,
+  hasSymbol: true,
 };
 
 function passwordGenerator(
@@ -65,7 +65,7 @@ function handleOptions(possibility: number[], options: PasswordOptionProps) {
   if (!options.hasUppercase) {
     possibility = removePossibilities(possibility, range(65, 90));
   }
-  if (!options.hasSymbols) {
+  if (!options.hasSymbol) {
     symbolsCharRanges.forEach(
       (range) => (possibility = removePossibilities(possibility, range))
     );
@@ -91,10 +91,8 @@ function getRandomOnRange(max: number, min: number) {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("AQUI !!!!!!!!!!!!!!!1");
-
   if (req.method == "GET") {
-    const { length, hasUppercase, hasLowercase, hasNumber, hasSymbols } =
+    const { length, hasUppercase, hasLowercase, hasNumber, hasSymbol } =
       req.query;
 
     if (!length) {
@@ -106,7 +104,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       hasUppercase: hasUppercase === "true",
       hasLowercase: hasLowercase === "true",
       hasNumber: hasNumber === "true",
-      hasSymbols: hasSymbols === "true",
+      hasSymbol: hasSymbol === "true",
     });
 
     res.status(200).json({ password });
