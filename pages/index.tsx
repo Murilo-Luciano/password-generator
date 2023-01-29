@@ -1,5 +1,5 @@
-import { Checkbox, FormControlLabel, FormGroup, Slider } from "@mui/material";
-import React from "react";
+import { Checkbox, Slider } from "@mui/material";
+import React, { useState } from "react";
 import { GrRefresh } from "react-icons/gr";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
             {"kjsa$jimd(i&"}
-            <GrRefresh />
+            <GrRefresh className="icon" />
           </div>
           <div className="copyButton">COPY</div>
         </div>
