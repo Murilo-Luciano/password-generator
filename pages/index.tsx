@@ -89,7 +89,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="footer">Made by Murilo</div>
+      <div className="footer">
+        Made by&nbsp;
+        <a href="https://github.com/Murilo-Luciano" target="_blank">
+          Murilo
+        </a>
+      </div>
     </>
   );
 }
