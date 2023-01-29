@@ -1,5 +1,6 @@
 import { Checkbox, Slider } from "@mui/material";
 import React, { useState } from "react";
+import { IconContext } from "react-icons";
 import { GrRefresh } from "react-icons/gr";
 
 export default function Home() {
@@ -10,7 +11,11 @@ export default function Home() {
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
             {"kjsa$jimd(i&"}
-            <GrRefresh className="icon" />
+            <div>
+              <IconContext.Provider value={{ className: "icon" }}>
+                <GrRefresh />
+              </IconContext.Provider>
+            </div>
           </div>
           <div className="copyButton">COPY</div>
         </div>
