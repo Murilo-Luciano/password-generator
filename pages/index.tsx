@@ -11,11 +11,9 @@ export default function Home() {
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
             {"kjsa$jimd(i&"}
-            <div>
-              <IconContext.Provider value={{ className: "icon" }}>
-                <GrRefresh />
-              </IconContext.Provider>
-            </div>
+            <IconContext.Provider value={{ className: "icon" }}>
+              <GrRefresh />
+            </IconContext.Provider>
           </div>
           <div className="copyButton">COPY</div>
         </div>
