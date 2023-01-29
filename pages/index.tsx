@@ -128,6 +128,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="description">
+        Use the options above to specify the desired length and characters when
+        generating your random password.
+      </div>
       <div className="footer">
         Made by&nbsp;
         <a href="https://github.com/Murilo-Luciano" target="_blank">

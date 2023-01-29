@@ -81,6 +81,12 @@
   margin-top: 32px;
 }
 
+.description {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 .footer {
   display: flex;
   justify-content: center;
