@@ -27,21 +27,25 @@ export default function Home() {
             }}
           />
           <div className="checkboxContainer">
-            <div className="checkbox">
-              <Checkbox sx={{ color: "white" }} />
-              Number
+            <div>
+              <div className="checkbox">
+                <Checkbox sx={{ color: "white" }} />
+                Number
+              </div>
+              <div className="checkbox">
+                <Checkbox sx={{ color: "white" }} />
+                Symbol
+              </div>
             </div>
-            <div className="checkbox">
-              <Checkbox sx={{ color: "white" }} />
-              Symbol
-            </div>
-            <div className="checkbox">
-              <Checkbox sx={{ color: "white" }} />
-              Lowercase
-            </div>
-            <div className="checkbox">
-              <Checkbox sx={{ color: "white" }} />
-              Uppercase
+            <div>
+              <div className="checkbox">
+                <Checkbox sx={{ color: "white" }} />
+                Lowercase
+              </div>
+              <div className="checkbox">
+                <Checkbox sx={{ color: "white" }} />
+                Uppercase
+              </div>
             </div>
           </div>
         </div>

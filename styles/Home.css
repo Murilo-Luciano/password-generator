@@ -54,11 +54,7 @@
 
 .checkboxContainer {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.checkboxContainer > div {
-  flex-basis: 50%;
+  justify-content: space-between;
 }
 
 .footer {
