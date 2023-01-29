@@ -9,6 +9,7 @@ export default function Home() {
   const [hasSymbol, setHasSymbol] = useState(true);
   const [hasLowercase, setHasLowercase] = useState(true);
   const [hasUppercase, setHasUppercase] = useState(true);
+  const [refresh, setRefresh] = useState(false);
   const [password, setPassword] = useState();
 
   const getPassword = async () => {
@@ -21,7 +22,15 @@ export default function Home() {
 
   useEffect(() => {
     getPassword();
-  }, [passwordLength, hasNumber, hasSymbol, hasLowercase, hasUppercase]);
+    setRefresh(false);
+  }, [
+    passwordLength,
+    hasNumber,
+    hasSymbol,
+    hasLowercase,
+    hasUppercase,
+    refresh,
+  ]);
 
   return (
     <>
@@ -31,7 +40,7 @@ export default function Home() {
           <div className="passwordTextField">
             {password}
             <IconContext.Provider value={{ className: "icon" }}>
-              <GrRefresh />
+              <GrRefresh onClick={() => setRefresh(true)} />
             </IconContext.Provider>
           </div>
           <div
