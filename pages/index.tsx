@@ -19,6 +19,10 @@ export default function Home() {
         </div>
         <div className="passwordOptionsContainer">
           <Slider
+            valueLabelDisplay="auto"
+            max={50}
+            min={1}
+            defaultValue={10}
             sx={{
               color: "#BA4949",
               "& .MuiSlider-rail": {
@@ -33,6 +37,7 @@ export default function Home() {
             <div>
               <div>
                 <Checkbox
+                  defaultChecked={true}
                   sx={{
                     color: "white",
                     "&.Mui-checked": {
@@ -44,6 +49,7 @@ export default function Home() {
               </div>
               <div>
                 <Checkbox
+                  defaultChecked={true}
                   sx={{
                     color: "white",
                     "&.Mui-checked": {
@@ -57,6 +63,7 @@ export default function Home() {
             <div>
               <div>
                 <Checkbox
+                  defaultChecked={true}
                   sx={{
                     color: "white",
                     "&.Mui-checked": {
@@ -68,6 +75,7 @@ export default function Home() {
               </div>
               <div>
                 <Checkbox
+                  defaultChecked={true}
                   sx={{
                     color: "white",
                     "&.Mui-checked": {
