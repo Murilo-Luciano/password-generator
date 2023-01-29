@@ -1,7 +1,7 @@
 import { Checkbox, Slider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { GrRefresh } from "react-icons/gr";
+import { GrRefresh, GrStatusInfo } from "react-icons/gr";
 
 export default function Home() {
   const [passwordLength, setPasswordLength] = useState(10);
@@ -129,6 +129,9 @@ export default function Home() {
         </div>
       </div>
       <div className="description">
+        <div>
+          <GrStatusInfo className="infoIcon" />
+        </div>
         Use the options above to specify the desired length and characters when
         generating your random password.
       </div>
