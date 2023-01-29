@@ -28,21 +28,21 @@ export default function Home() {
           />
           <div className="checkboxContainer">
             <div>
-              <div className="checkbox">
+              <div>
                 <Checkbox sx={{ color: "white" }} />
                 Number
               </div>
-              <div className="checkbox">
+              <div>
                 <Checkbox sx={{ color: "white" }} />
                 Symbol
               </div>
             </div>
             <div>
-              <div className="checkbox">
+              <div>
                 <Checkbox sx={{ color: "white" }} />
                 Lowercase
               </div>
-              <div className="checkbox">
+              <div>
                 <Checkbox sx={{ color: "white" }} />
                 Uppercase
               </div>
