@@ -51,6 +51,7 @@ export default function Home() {
           </div>
         </div>
         <div className="passwordOptionsContainer">
+          Password Length
           <Slider
             valueLabelDisplay="auto"
             max={50}

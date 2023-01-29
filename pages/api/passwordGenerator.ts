@@ -100,12 +100,18 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return;
     }
 
-    const password = passwordGenerator(_.toInteger(length), {
+    const options = {
       hasUppercase: hasUppercase === "true",
       hasLowercase: hasLowercase === "true",
       hasNumber: hasNumber === "true",
       hasSymbol: hasSymbol === "true",
-    });
+    };
+
+    if (_.every(options, (e) => !e)) {
+      res.status(400).send(undefined);
+      return;
+    }
+    const password = passwordGenerator(_.toInteger(length), options);
 
     res.status(200).json({ password });
   }
