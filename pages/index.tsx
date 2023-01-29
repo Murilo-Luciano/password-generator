@@ -1,5 +1,5 @@
 import { Checkbox, Slider } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { IconContext } from "react-icons";
 import { GrRefresh } from "react-icons/gr";
 
