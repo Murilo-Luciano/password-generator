@@ -32,21 +32,49 @@ export default function Home() {
           <div className="checkboxContainer">
             <div>
               <div>
-                <Checkbox sx={{ color: "white" }} />
+                <Checkbox
+                  sx={{
+                    color: "white",
+                    "&.Mui-checked": {
+                      color: "white",
+                    },
+                  }}
+                />
                 Number
               </div>
               <div>
-                <Checkbox sx={{ color: "white" }} />
+                <Checkbox
+                  sx={{
+                    color: "white",
+                    "&.Mui-checked": {
+                      color: "white",
+                    },
+                  }}
+                />
                 Symbol
               </div>
             </div>
             <div>
               <div>
-                <Checkbox sx={{ color: "white" }} />
+                <Checkbox
+                  sx={{
+                    color: "white",
+                    "&.Mui-checked": {
+                      color: "white",
+                    },
+                  }}
+                />
                 Lowercase
               </div>
               <div>
-                <Checkbox sx={{ color: "white" }} />
+                <Checkbox
+                  sx={{
+                    color: "white",
+                    "&.Mui-checked": {
+                      color: "white",
+                    },
+                  }}
+                />
                 Uppercase
               </div>
             </div>

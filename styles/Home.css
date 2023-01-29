@@ -1,10 +1,11 @@
 .header {
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 100px;
   border-bottom: 1px solid #783535;
   width: 80%;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .contentContainer {
@@ -14,15 +15,15 @@
   padding: 36px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.1);
-  width: 448px;
-  height: 351px;
+  width: 600px;
+  height: 400px;
 }
 
 .passwordDisplayContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 400px;
+  width: 550px;
 }
 
 .passwordTextField {
@@ -30,7 +31,8 @@
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #ffffff;
-  width: 70%;
+  width: 80%;
+  font-size: 22px;
 }
 
 .icon {
@@ -45,8 +47,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 71px;
-  height: 25px;
+  width: 90px;
+  height: 30px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
@@ -66,15 +68,16 @@
 }
 
 .passwordOptionsContainer {
-  margin-top: 64px;
+  margin-top: 90px;
   width: 80%;
   height: 130;
+  font-size: 20px;
 }
 
 .checkboxContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 .footer {
