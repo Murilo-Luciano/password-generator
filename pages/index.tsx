@@ -137,7 +137,11 @@ export default function Home() {
       </div>
       <div className="footer">
         Made by&nbsp;
-        <a href="https://github.com/Murilo-Luciano" target="_blank">
+        <a
+          href="https://github.com/Murilo-Luciano"
+          target="_blank"
+          rel="noreferrer"
+        >
           Murilo
         </a>
       </div>
