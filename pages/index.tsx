@@ -1,7 +1,13 @@
 import { Checkbox, Slider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { GrRefresh, GrStatusInfo } from "react-icons/gr";
+import {
+  GrRefresh,
+  GrStatusInfo,
+  GrValidate,
+  GrClear,
+  GrAlert,
+} from "react-icons/gr";
 
 export default function Home() {
   const [passwordLength, setPasswordLength] = useState(10);
@@ -38,6 +44,37 @@ export default function Home() {
     refresh,
   ]);
 
+  const StrengthDisplay = () => {
+    if (passwordStrength == "strong")
+      return (
+        <div className="strengthDescription strengthDescriptionStrong">
+          <div>
+            <GrValidate className="infoIcon" />
+          </div>
+          Strong
+        </div>
+      );
+
+    if (passwordStrength == "weak")
+      return (
+        <div className="strengthDescription strengthDescriptionWeak">
+          <div>
+            <GrClear className="infoIcon" />
+          </div>
+          Very weak
+        </div>
+      );
+
+    return (
+      <div className="strengthDescription strengthDescriptionAverage">
+        <div>
+          <GrAlert className="infoIcon" />
+        </div>
+        Weak
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="header">Passwords Generator</div>
@@ -56,6 +93,9 @@ export default function Home() {
             COPY
           </div>
         </div>
+
+        <StrengthDisplay />
+
         <div className="passwordOptionsContainer">
           Password Length
           <Slider
