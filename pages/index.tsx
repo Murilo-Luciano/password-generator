@@ -11,13 +11,19 @@ export default function Home() {
   const [hasUppercase, setHasUppercase] = useState(true);
   const [refresh, setRefresh] = useState(false);
   const [password, setPassword] = useState();
+  const [passwordPossibilities, setPasswordPossibilities] = useState();
+  const [passwordStrength, setPasswordStrength] = useState();
 
   const getPassword = async () => {
-    const res = await fetch(
-      `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
-    );
+    const res = await (
+      await fetch(
+        `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
+      )
+    ).json();
 
-    setPassword((await res.json()).password);
+    setPassword(res.password);
+    setPasswordPossibilities(res.possibilities);
+    setPasswordStrength(res.strength);
   };
 
   useEffect(() => {
@@ -34,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="header">Password Generator</div>
+      <div className="header">Passwords Generator</div>
       <div className="contentContainer">
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
