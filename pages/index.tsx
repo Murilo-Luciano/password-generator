@@ -65,9 +65,9 @@ export default function Home() {
         </div>
       );
 
-    if (passwordStrength == "weak")
+    if (passwordStrength == "veryWeak")
       return (
-        <div className="strengthDescription strengthDescriptionWeak">
+        <div className="strengthDescription strengthDescriptionVeryWeak">
           <div>
             <GrClear className="infoIcon" />
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
       );
 
     return (
-      <div className="strengthDescription strengthDescriptionAverage">
+      <div className="strengthDescription strengthDescriptionWeak">
         <div>
           <GrAlert className="infoIcon" />
         </div>

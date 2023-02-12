@@ -103,13 +103,11 @@ function calculatePasswordStrength(possibilities: number) {
   const STRONG_LIMIT = 4.7592031481425336e23;
   const VERY_STRONG_LIMIT = 2.9010624113146183e39;
 
-  /**@todo: rename: weak -> veryWeak e average -> weak */
-
   if (possibilities > VERY_STRONG_LIMIT) return "veryStrong";
   if (possibilities > STRONG_LIMIT) return "strong";
-  if (possibilities < WEAK_LIMIT) return "weak";
+  if (possibilities < WEAK_LIMIT) return "veryWeak";
 
-  return "average";
+  return "weak";
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
