@@ -1,4 +1,5 @@
 import { Checkbox, Slider } from "@mui/material";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import {
@@ -87,6 +88,14 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Passwords Generator</title>
+        <meta name="description" content="Password generator" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/icon48.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/icon64.png" />
+      </Head>
       <div className="header">Passwords Generator</div>
       <div className="contentContainer">
         <div className="passwordDisplayContainer">
