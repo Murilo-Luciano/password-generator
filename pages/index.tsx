@@ -45,6 +45,16 @@ export default function Home() {
   ]);
 
   const StrengthDisplay = () => {
+    if (passwordStrength == "veryStrong")
+      return (
+        <div className="strengthDescription strengthDescriptionVeryStrong">
+          <div>
+            <GrValidate className="infoIcon" />
+          </div>
+          Very Strong
+        </div>
+      );
+
     if (passwordStrength == "strong")
       return (
         <div className="strengthDescription strengthDescriptionStrong">

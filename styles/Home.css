@@ -107,6 +107,10 @@
   font-weight: bold;
 }
 
+.strengthDescriptionVeryStrong {
+  background-color: rgba(62, 139, 177, 0.65);
+}
+
 .strengthDescriptionStrong {
   background-color: rgba(62, 177, 72, 0.65);
 }

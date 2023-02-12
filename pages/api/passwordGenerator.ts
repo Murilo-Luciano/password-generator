@@ -101,9 +101,13 @@ function calculatePasswordPossibilities(
 function calculatePasswordStrength(possibilities: number) {
   const WEAK_LIMIT = 146830437604321;
   const STRONG_LIMIT = 4.7592031481425336e23;
+  const VERY_STRONG_LIMIT = 2.9010624113146183e39;
 
-  if (possibilities < WEAK_LIMIT) return "weak";
+  /**@todo: rename: weak -> veryWeak e average -> weak */
+
+  if (possibilities > VERY_STRONG_LIMIT) return "veryStrong";
   if (possibilities > STRONG_LIMIT) return "strong";
+  if (possibilities < WEAK_LIMIT) return "weak";
 
   return "average";
 }
