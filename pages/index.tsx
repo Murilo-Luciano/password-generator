@@ -1,7 +1,13 @@
 import { Checkbox, Slider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { GrRefresh, GrStatusInfo } from "react-icons/gr";
+import {
+  GrRefresh,
+  GrStatusInfo,
+  GrValidate,
+  GrClear,
+  GrAlert,
+} from "react-icons/gr";
 
 export default function Home() {
   const [passwordLength, setPasswordLength] = useState(10);
@@ -10,14 +16,20 @@ export default function Home() {
   const [hasLowercase, setHasLowercase] = useState(true);
   const [hasUppercase, setHasUppercase] = useState(true);
   const [refresh, setRefresh] = useState(false);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
+  const [passwordPossibilities, setPasswordPossibilities] = useState();
+  const [passwordStrength, setPasswordStrength] = useState("");
 
   const getPassword = async () => {
-    const res = await fetch(
-      `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
-    );
+    const res = await (
+      await fetch(
+        `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
+      )
+    ).json();
 
-    setPassword((await res.json()).password);
+    setPassword(res.password);
+    setPasswordPossibilities(res.possibilities);
+    setPasswordStrength(res.strength);
   };
 
   useEffect(() => {
@@ -32,9 +44,50 @@ export default function Home() {
     refresh,
   ]);
 
+  const StrengthDisplay = () => {
+    if (passwordStrength == "veryStrong")
+      return (
+        <div className="strengthDescription strengthDescriptionVeryStrong">
+          <div>
+            <GrValidate className="infoIcon" />
+          </div>
+          Very Strong
+        </div>
+      );
+
+    if (passwordStrength == "strong")
+      return (
+        <div className="strengthDescription strengthDescriptionStrong">
+          <div>
+            <GrValidate className="infoIcon" />
+          </div>
+          Strong
+        </div>
+      );
+
+    if (passwordStrength == "veryWeak")
+      return (
+        <div className="strengthDescription strengthDescriptionVeryWeak">
+          <div>
+            <GrClear className="infoIcon" />
+          </div>
+          Very weak
+        </div>
+      );
+
+    return (
+      <div className="strengthDescription strengthDescriptionWeak">
+        <div>
+          <GrAlert className="infoIcon" />
+        </div>
+        Weak
+      </div>
+    );
+  };
+
   return (
     <>
-      <div className="header">Password Generator</div>
+      <div className="header">Passwords Generator</div>
       <div className="contentContainer">
         <div className="passwordDisplayContainer">
           <div className="passwordTextField">
@@ -50,6 +103,9 @@ export default function Home() {
             COPY
           </div>
         </div>
+
+        <StrengthDisplay />
+
         <div className="passwordOptionsContainer">
           Password Length
           <Slider
@@ -132,8 +188,19 @@ export default function Home() {
         <div>
           <GrStatusInfo className="infoIcon" />
         </div>
-        Use the options above to specify the desired length and characters when
-        generating your random password.
+        <div>
+          Use the options above to specify the desired length and characters
+          when generating your random password.
+          <br />
+          <br />
+          The selected options gives you{" "}
+          <strong>
+            {(passwordPossibilities as any as number)?.toString().includes("e+")
+              ? passwordPossibilities
+              : (passwordPossibilities as any as number)?.toLocaleString()}
+          </strong>{" "}
+          password possibilities.
+        </div>
       </div>
       <div className="footer">
         Made by&nbsp;

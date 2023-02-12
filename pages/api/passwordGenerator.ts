@@ -90,6 +90,26 @@ function getRandomOnRange(max: number, min: number) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function calculatePasswordPossibilities(
+  length: number,
+  options: PasswordOptionProps = initialOptions
+): number {
+  const charCodePossibilities = handleOptions(range(33, 126), options);
+  return Math.pow(charCodePossibilities.length, length);
+}
+
+function calculatePasswordStrength(possibilities: number) {
+  const WEAK_LIMIT = 146830437604321;
+  const STRONG_LIMIT = 4.7592031481425336e23;
+  const VERY_STRONG_LIMIT = 2.9010624113146183e39;
+
+  if (possibilities > VERY_STRONG_LIMIT) return "veryStrong";
+  if (possibilities > STRONG_LIMIT) return "strong";
+  if (possibilities < WEAK_LIMIT) return "veryWeak";
+
+  return "weak";
+}
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == "GET") {
     const { length, hasUppercase, hasLowercase, hasNumber, hasSymbol } =
@@ -112,10 +132,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return;
     }
     const password = passwordGenerator(_.toInteger(length), options);
+    const possibilities = calculatePasswordPossibilities(
+      _.toInteger(length),
+      options
+    );
+    const strength = calculatePasswordStrength(possibilities);
 
-    res.status(200).json({ password });
+    res.status(200).json({ password, possibilities, strength });
   }
 }
-
-// http://localhost:3000/api/passwordGenerator?teste=true
-// http://localhost:3000/api/passwordGenerator?length=10&hasUppercase=true&hasLowercase=true&hasNumber=true&hasSymbol=true
