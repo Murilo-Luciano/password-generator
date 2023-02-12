@@ -188,15 +188,19 @@ export default function Home() {
         <div>
           <GrStatusInfo className="infoIcon" />
         </div>
-        Use the options above to specify the desired length and characters when
-        generating your random password.
-        <br />
-        <br />
-        Those options gives you{" "}
-        {(passwordPossibilities as any as number)?.toString().includes("e+")
-          ? passwordPossibilities
-          : (passwordPossibilities as any as number)?.toLocaleString()}{" "}
-        password possibilities.
+        <div>
+          Use the options above to specify the desired length and characters
+          when generating your random password.
+          <br />
+          <br />
+          The selected options gives you{" "}
+          <strong>
+            {(passwordPossibilities as any as number)?.toString().includes("e+")
+              ? passwordPossibilities
+              : (passwordPossibilities as any as number)?.toLocaleString()}
+          </strong>{" "}
+          password possibilities.
+        </div>
       </div>
       <div className="footer">
         Made by&nbsp;
