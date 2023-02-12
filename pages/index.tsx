@@ -16,9 +16,9 @@ export default function Home() {
   const [hasLowercase, setHasLowercase] = useState(true);
   const [hasUppercase, setHasUppercase] = useState(true);
   const [refresh, setRefresh] = useState(false);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
   const [passwordPossibilities, setPasswordPossibilities] = useState();
-  const [passwordStrength, setPasswordStrength] = useState();
+  const [passwordStrength, setPasswordStrength] = useState("");
 
   const getPassword = async () => {
     const res = await (
@@ -190,6 +190,13 @@ export default function Home() {
         </div>
         Use the options above to specify the desired length and characters when
         generating your random password.
+        <br />
+        <br />
+        Those options gives you{" "}
+        {(passwordPossibilities as any as number)?.toString().includes("e+")
+          ? passwordPossibilities
+          : (passwordPossibilities as any as number)?.toLocaleString()}{" "}
+        password possibilities.
       </div>
       <div className="footer">
         Made by&nbsp;
