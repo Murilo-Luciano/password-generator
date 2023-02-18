@@ -1,4 +1,4 @@
-import { Checkbox, Slider } from "@mui/material";
+import { Alert, Checkbox, Slider, Snackbar } from "@mui/material";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
@@ -20,17 +20,21 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [passwordPossibilities, setPasswordPossibilities] = useState();
   const [passwordStrength, setPasswordStrength] = useState("");
+  const [hasError, setHasError] = useState(false);
 
   const getPassword = async () => {
-    const res = await (
-      await fetch(
-        `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
-      )
-    ).json();
+    const res = await fetch(
+      `/api/passwordGenerator?length=${passwordLength}&hasNumber=${hasNumber}&hasSymbol=${hasSymbol}&hasLowercase=${hasLowercase}&hasUppercase=${hasUppercase}`
+    );
 
-    setPassword(res.password);
-    setPasswordPossibilities(res.possibilities);
-    setPasswordStrength(res.strength);
+    if (res.status === 400) setHasError(true);
+
+    const { password, possibilities, strength } = await res.json();
+
+    setHasError(false);
+    setPassword(password);
+    setPasswordPossibilities(possibilities);
+    setPasswordStrength(strength);
   };
 
   useEffect(() => {
@@ -96,6 +100,14 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="48x48" href="/icon48.png" />
         <link rel="icon" type="image/png" sizes="64x64" href="/icon64.png" />
       </Head>
+      {hasError ? (
+        <Snackbar
+          open={hasError}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <Alert severity="error">At least one option must be selected</Alert>
+        </Snackbar>
+      ) : null}
       <div className="header">Passwords Generator</div>
       <div className="contentContainer">
         <div className="passwordDisplayContainer">
