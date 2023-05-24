@@ -52,6 +52,8 @@ export default function Staging() {
         initialState={initialState}
         strengthLevel={strengthLevel}
       />
+
+      <ArticlesSection />
     </div>
   );
 }
@@ -487,6 +489,73 @@ const InitialButton = () => {
       }}
     >
       Generate Password
+    </div>
+  );
+};
+
+const ArticlesSection = () => {
+  /**@todo: receive articles and display */
+  /**@todo: text styles */
+  return (
+    <div
+      style={{
+        backgroundColor: colors.whiteBackground,
+        // display: "flex",
+        // justifyContent: "center",
+        // alignItems: "center",
+        // textAlign: "center",
+        // paddingTop: 146,
+        paddingLeft: 203,
+        paddingRight: 203,
+      }}
+    >
+      <div>
+        <h1>How to Choose a Strong Password</h1>
+        <div
+          style={{
+            textAlign: "initial",
+          }}
+        >
+          <p>
+            Choosing a strong password is essential to protect your online
+            accounts from unauthorized access. While it's easy to use simple and
+            easy-to-remember passwords, these types of passwords are also easy
+            for hackers to guess or crack. To help you choose a strong password,
+            we've put together some tips and guidelines:
+          </p>
+          <p>
+            1. Use a mix of characters: The more characters you use, the harder
+            it is for someone to guess your password. Use a combination of
+            uppercase and lowercase letters, numbers, and symbols.
+          </p>
+          <p>
+            2. Don't use personal information: Avoid using information that can
+            be easily found or guessed, such as your name, birthdate, or
+            address.
+          </p>
+          <p>
+            3. Make it unique: Don't use the same password across multiple
+            accounts. If a hacker guesses your password for one account, they
+            could potentially access all your accounts.
+          </p>
+          <p>
+            4. Use a passphrase: Instead of a single word, consider using a
+            passphrase, which is a combination of several words. For example,
+            "correcthorsebatterystaple" is a popular passphrase that's hard to
+            guess but easy to remember.
+          </p>
+          <p>
+            5. Use a password generator: If you have trouble coming up with a
+            strong password, consider using a password generator. Many web
+            browsers and password manager apps have this feature.
+          </p>
+          <p>
+            Remember, a strong password is only effective if you keep it
+            private. Don't share your password with anyone and avoid writing it
+            down.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
