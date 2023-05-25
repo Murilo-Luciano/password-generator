@@ -507,6 +507,11 @@ const ArticlesSection = () => {
         // paddingTop: 146,
         paddingLeft: 203,
         paddingRight: 203,
+        // fontFamily: 'Inter',
+        // fontStyle: "normal",
+        fontWeight: 600,
+        fontSize: 24,
+        color: colors.black
       }}
     >
       <div>
