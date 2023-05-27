@@ -1,0 +1,112 @@
+:root {
+  --color-background: #101b30;
+  --color-whiteBackground: #d9d9d9;
+  --color-cardBackground: #18253f;
+  --color-cardBackgroundLight: #263752;
+  --color-yellow: #ffd768;
+  --color-veryGood: #44d2a7;
+  --color-strong: #f5e445;
+  --color-medium: #ffc94d;
+  --color-weak: #ff9b5c;
+  --color-veryWeak: #ff6565;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 284px;
+    margin-bottom: 97px;
+    color: var(--color-yellow);
+  }
+  .hero-section > h1 {
+    font-weight: 800;
+    font-size: 40;
+  }
+  .hero-section > p {
+    font-weight: 400;
+    font-size: 18;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .hero-section {
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 400px;
+    margin-bottom: 97px;
+    color: var(--color-yellow);
+  }
+  .hero-section > h1 {
+    font-weight: 800;
+    font-size: 40;
+  }
+  .hero-section > p {
+    font-weight: 400;
+    font-size: 18;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .hero-section {
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 600px;
+    margin-bottom: 184px;
+    color: var(--color-yellow);
+  }
+  .hero-section > h1 {
+    font-weight: 800;
+    font-size: 52;
+  }
+  .hero-section > p {
+    font-weight: 400;
+    font-size: 24;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero-section {
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 887px;
+    margin-bottom: 184px;
+    color: var(--color-yellow);
+  }
+
+  .hero-section > h1 {
+    font-weight: 800;
+    font-size: 52;
+  }
+
+  .hero-section > p {
+    font-weight: 400;
+    font-size: 24;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .hero-section {
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 887px;
+    margin-bottom: 184px;
+    color: var(--color-yellow);
+  }
+  .hero-section > h1 {
+    font-weight: 800;
+    font-size: 52;
+  }
+  .hero-section > p {
+    font-weight: 400;
+    font-size: 24;
+  }
+}
