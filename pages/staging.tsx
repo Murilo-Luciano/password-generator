@@ -82,9 +82,6 @@ const GeneratorSection = (props: {
 const ArticlesSection = (props: {
   articles: { title: string; paragraphs: string[] }[];
 }) => {
-  /**@todo: receive articles and display */
-  /**@todo: text styles */
-
   return (
     <div
       style={{
@@ -98,8 +95,8 @@ const ArticlesSection = (props: {
         color: colors.black,
       }}
     >
-      {props.articles.map((article) => (
-        <article style={{ marginBottom: 80 }}>
+      {props.articles.map((article, index) => (
+        <article key={index} style={{ marginBottom: 80 }}>
           <section style={{ maxWidth: 896 }}>
             <h1>{article.title}</h1>
             {article.paragraphs.map((paragraph) => (
@@ -132,12 +129,12 @@ const Footer = () => {
         fontSize: 18,
       }}
     >
-      <a>
+      <p>
         Made by{" "}
         <a>
           <strong>Murilo</strong>
         </a>
-      </a>
+      </p>
     </div>
   );
 };
