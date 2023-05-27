@@ -50,24 +50,7 @@ export default function Staging() {
 
       <ArticlesSection articles={articles} />
 
-      <div
-        style={{
-          height: 32,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: colors.yellow,
-          color: colors.black,
-          fontSize: 18,
-        }}
-      >
-        <a>
-          Made by{" "}
-          <a>
-            <strong>Murilo</strong>
-          </a>
-        </a>
-      </div>
+      <Footer />
     </>
   );
 }
@@ -132,6 +115,29 @@ const ArticlesSection = (props: {
           </section>
         </article>
       ))}
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div
+      style={{
+        height: 32,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: colors.yellow,
+        color: colors.black,
+        fontSize: 18,
+      }}
+    >
+      <a>
+        Made by{" "}
+        <a>
+          <strong>Murilo</strong>
+        </a>
+      </a>
     </div>
   );
 };

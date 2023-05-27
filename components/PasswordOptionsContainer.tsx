@@ -193,7 +193,7 @@ const CheckboxTst = ({ defaultValue }: { defaultValue: boolean }) => {
         height="23"
         rx="3.5"
         stroke="#FFEEBE"
-        stroke-opacity="0.14"
+        strokeOpacity="0.14"
       />
     </svg>
   );
