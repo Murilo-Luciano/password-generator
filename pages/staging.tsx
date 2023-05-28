@@ -101,6 +101,7 @@ const ArticlesSection = (props: {
             <h1>{article.title}</h1>
             {article.paragraphs.map((paragraph) => (
               <p
+                key={index}
                 style={{
                   textAlign: "initial",
                   fontSize: 16,

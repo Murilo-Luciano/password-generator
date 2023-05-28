@@ -1,35 +1,10 @@
-import colors from "../styles/colors";
-
 export default (props: { strengthLevel: { color: string } }) => {
   return (
-    <div
-      style={{
-        marginBottom: 97,
-        display: "flex",
-        flexDirection: "row",
-
-        justifyContent: "center",
-      }}
-    >
+    <div className="password-display-container">
       <div
+        className="password-display"
         style={{
-          width: 612,
-          borderRadius: 32,
           backgroundColor: props.strengthLevel.color,
-          color: colors.black,
-
-          display: "flex",
-
-          alignContent: "center",
-          justifyContent: "space-between",
-
-          paddingLeft: 47,
-          paddingRight: 47,
-          paddingBottom: 8,
-          paddingTop: 8,
-
-          fontWeight: 400,
-          fontSize: 32,
         }}
       >
         {"928#!D]ws83&ZtSD&4S...."}
@@ -46,25 +21,7 @@ export default (props: { strengthLevel: { color: string } }) => {
           />
         </svg>
       </div>
-      <div
-        style={{
-          height: 50,
-          width: 183,
-          borderRadius: 16,
-          backgroundColor: colors.cardBackgroundLight,
-
-          fontWeight: 400,
-          fontSize: 32,
-
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-
-          marginLeft: 22,
-        }}
-      >
-        COPY
-      </div>
+      <div className="password-copy-button">COPY</div>
     </div>
   );
 };
