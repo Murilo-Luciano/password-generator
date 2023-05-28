@@ -13,6 +13,22 @@
   --color-white: #ffffff;
 }
 
+.initial-button {
+  margin: 0 auto;
+  width: 337px;
+  margin-bottom: 98px;
+  border-radius: 16px;
+
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  text-align: center;
+  font-weight: 400;
+  font-size: 32px;
+
+  background-color: var(--color-veryWeak);
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .hero-section {
