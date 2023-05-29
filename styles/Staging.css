@@ -13,6 +13,10 @@
   --color-white: #ffffff;
 }
 
+body {
+  margin: 0;
+}
+
 .initial-button {
   margin: 0 auto;
   width: 337px;
@@ -192,6 +196,32 @@
     font-weight: 600;
     font-size: 24px;
   }
+
+  .articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    text-align: center;
+    font-weight: 400;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 40px;
+  }
+  .articles-section > article > section {
+    padding: 10px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: center;
+    font-size: 16px;
+  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -254,6 +284,31 @@
   }
 
   /* password options aqui !!!! */
+
+  .articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -316,6 +371,31 @@
   }
 
   /* password options aqui !!!! */
+
+  .articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -452,6 +532,31 @@
     font-weight: 600;
     font-size: 24px;
   }
+
+  .articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
@@ -513,7 +618,7 @@
 
   .password-options-container {
     margin: 0 auto;
-    width: 1030px; /* usar padding na div externa */
+    width: 1030px; /* usar padding na div externa ? */
     border-radius: 24px;
 
     padding: 68px 211px;
@@ -585,5 +690,30 @@
   .password-info-container > a {
     font-weight: 600;
     font-size: 24px;
+  }
+
+  .articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
   }
 }

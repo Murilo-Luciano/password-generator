@@ -71,6 +71,7 @@ const GeneratorSection = (props: {
       )}
 
       {/* @todo: use context */}
+      {/* @todo: concluir css do PasswordOptionsContainer*/}
       <PasswordOptionsContainer
         initialState={props.initialState}
         strengthLevel={props.strengthLevel}
@@ -83,32 +84,13 @@ const ArticlesSection = (props: {
   articles: { title: string; paragraphs: string[] }[];
 }) => {
   return (
-    <div
-      style={{
-        backgroundColor: colors.whiteBackground,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        fontWeight: 600,
-        fontSize: 24,
-        color: colors.black,
-      }}
-    >
+    <div className="articles-section">
       {props.articles.map((article, index) => (
-        <article key={index} style={{ marginBottom: 80 }}>
-          <section style={{ maxWidth: 896 }}>
+        <article key={index}>
+          <section>
             <h1>{article.title}</h1>
             {article.paragraphs.map((paragraph) => (
-              <p
-                key={index}
-                style={{
-                  textAlign: "initial",
-                  fontSize: 16,
-                }}
-              >
-                {paragraph}
-              </p>
+              <p key={index}>{paragraph}</p>
             ))}
           </section>
         </article>
