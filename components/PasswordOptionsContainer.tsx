@@ -9,39 +9,11 @@ export default (props: {
   };
 }) => {
   return (
-    <div
-      style={{
-        margin: "0 auto",
-        width: 1030,
-        backgroundColor: colors.cardBackground,
-        borderRadius: 24,
-        paddingTop: 73,
-        paddingBottom: 68,
-        paddingLeft: 211,
-        paddingRight: 211,
-        boxShadow:
-          "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25)",
-
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-      }}
-    >
+    <div className="password-options-container">
       <div style={{}}>
         <PasswordLength />
 
-        <div
-          style={{
-            margin: "0 auto",
-            marginTop: 66,
-            width: 560,
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            rowGap: 79,
-          }}
-        >
+        <div className="password-options-check-container">
           <OptionCheckBox defaultValue={false} optionLabel="Number" />
           <OptionCheckBox defaultValue optionLabel="Lowercase" />
           <OptionCheckBox defaultValue optionLabel="Symbol" />
@@ -49,34 +21,18 @@ export default (props: {
         </div>
       </div>
       {props.initialState ? null : (
+        // Abstract into function
         <div
           style={{
-            width: 281,
-            borderRadius: 16,
-            backgroundColor: colors.cardBackgroundLight,
             border: `2px solid ${props.strengthLevel.color}`,
-
             borderColor: props.strengthLevel.color,
-            textAlign: "center",
-
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-
-            marginLeft: 40,
           }}
+          className="password-info-container"
         >
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: 24,
-            }}
-          >
+          <p>
             <a
               style={{
                 color: props.strengthLevel.color,
-                fontWeight: 600,
-                fontSize: 24,
               }}
             >
               {props.strengthLevel.interjection}
@@ -86,21 +42,12 @@ export default (props: {
           <p
             style={{
               color: props.strengthLevel.color,
-              fontWeight: 600,
-              fontSize: 24,
             }}
           >
             5 years
           </p>
 
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: 24,
-            }}
-          >
-            for a hacker to crack your password
-          </p>
+          <p>for a hacker to crack your password</p>
         </div>
       )}
     </div>
@@ -127,35 +74,23 @@ const PasswordLength = () => {
         max="100"
         value={value}
         onChange={handleChange}
-        className="slider"
+        className="password-length-slider"
         style={{
           background: calculateTrackColor(),
-          width: "100%",
-          height: "8px",
-          outline: "none",
-          appearance: "none",
         }}
       />
     );
   };
 
   return (
-    <div
-      style={{
-        margin: "0 auto",
-        width: 608,
-        fontWeight: 400,
-        fontSize: 24,
-        color: colors.white,
-      }}
-    >
+    <div className="password-length-container">
       Length
       <SliderRangeBar />
     </div>
   );
 };
 
-const CheckboxTst = ({ defaultValue }: { defaultValue: boolean }) => {
+const Checkbox = ({ defaultValue }: { defaultValue: boolean }) => {
   const [checked, setChecked] = useState(defaultValue);
 
   if (checked) {
@@ -207,24 +142,8 @@ const OptionCheckBox = ({
   defaultValue: boolean;
 }) => {
   return (
-    <div
-      style={{
-        backgroundColor: colors.cardBackgroundLight,
-        borderRadius: 16,
-        width: 214,
-        height: 24,
-        paddingBottom: 6,
-        paddingTop: 6,
-        paddingRight: 18,
-        paddingLeft: 18,
-        display: "flex",
-        alignItems: "center",
-        fontWeight: 400,
-        fontSize: 24,
-        color: colors.white,
-      }}
-    >
-      <CheckboxTst defaultValue={defaultValue} />
+    <div className="password-options-check-box">
+      <Checkbox defaultValue={defaultValue} />
       <div style={{ marginRight: 30 }}></div>
       {optionLabel}
     </div>
