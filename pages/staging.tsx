@@ -5,6 +5,7 @@ import PasswordDisplayContainer from "../components/PasswordDisplayContainer";
 import PasswordOptionsContainer from "../components/PasswordOptionsContainer";
 import colors from "../styles/colors";
 import articles from "../utils/articles";
+import Head from "next/head";
 
 const STRENGTH_LEVELS = {
   veryGood: {
@@ -35,11 +36,14 @@ export default function Staging() {
 
   return (
     <>
-      <style jsx global>{`
-        :root {
-          background: #101b30;
-        }
-      `}</style>
+      <Head>
+        <title>Passwords Generator</title>
+        <meta name="description" content="Password generator" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Inter"
+          rel="stylesheet"
+        />
+      </Head>
 
       <GeneratorSection
         initialState={initialState}

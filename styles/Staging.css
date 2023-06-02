@@ -13,6 +13,11 @@
   --color-veryWeak: #ff6565;
   --color-black: #000000;
   --color-white: #ffffff;
+
+  font-family: "Inter";
+  font-style: normal;
+
+  background: var(--color-background);
 }
 
 body {
