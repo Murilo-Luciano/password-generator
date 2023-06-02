@@ -17,6 +17,10 @@
   font-family: "Inter";
   font-style: normal;
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   background: var(--color-background);
 }
 
@@ -70,6 +74,10 @@ body {
 
   color: var(--color-black);
   font-weight: 400;
+
+  -webkit-user-select: text; /* Safari */
+  -ms-user-select: text; /* IE 10 and IE 11 */
+  user-select: text; /* Standard syntax */
 }
 .password-copy-button {
   width: 183.36px;
@@ -220,6 +228,10 @@ body {
   }
 
   .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -361,6 +373,10 @@ body {
   }
 
   .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -503,6 +519,10 @@ body {
   }
 
   .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -637,6 +657,10 @@ body {
   }
 
   .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -768,6 +792,10 @@ body {
   }
 
   .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
     display: flex;
     flex-direction: column;
     align-items: center;
