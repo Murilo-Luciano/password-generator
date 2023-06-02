@@ -44,6 +44,41 @@ body {
   background-color: var(--color-veryWeak);
 }
 
+.password-display-container {
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-display {
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--color-black);
+  font-weight: 400;
+}
+.password-copy-button {
+  width: 183.36px;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 32px;
+
+  background-color: var(--color-cardBackgroundLight);
+}
+
 .password-length-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -76,45 +111,20 @@ body {
   }
 
   .password-display-container {
-    margin: 0 auto;
     width: 284px;
     height: 122px;
-    margin-bottom: 30px;
 
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
   }
   .password-display {
     width: 284px;
     height: 34px;
     padding: 4px 22px;
-    border-radius: 32px;
 
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
-    color: var(--color-black);
-    font-weight: 400;
     font-size: 18px;
   }
   .password-copy-button {
-    width: 183.36px;
     height: 50px;
-    border-radius: 16px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 400;
-    font-size: 32px;
-
-    background-color: var(--color-cardBackgroundLight);
   }
 
   .password-options-container {
@@ -242,44 +252,20 @@ body {
   }
 
   .password-display-container {
-    margin: 0 auto;
     width: 818px;
-    margin-bottom: 30px;
 
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .password-display {
     width: 612px;
     height: 56px;
     padding: 4px 36px;
-    border-radius: 32px;
 
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
-    color: var(--color-black);
-    font-weight: 400;
     font-size: 32px;
   }
   .password-copy-button {
-    width: 183.36px;
     height: 56px;
-    border-radius: 16px;
     margin-left: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 400;
-    font-size: 32px;
-
-    background-color: var(--color-cardBackgroundLight);
   }
 
   .password-options-container {
@@ -408,44 +394,20 @@ body {
   }
 
   .password-display-container {
-    margin: 0 auto;
     width: 818px;
-    margin-bottom: 30px;
 
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .password-display {
     width: 612px;
     height: 56px;
     padding: 4px 36px;
-    border-radius: 32px;
 
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
-    color: var(--color-black);
-    font-weight: 400;
     font-size: 32px;
   }
   .password-copy-button {
-    width: 183.36px;
     height: 56px;
-    border-radius: 16px;
     margin-left: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 400;
-    font-size: 32px;
-
-    background-color: var(--color-cardBackgroundLight);
   }
 
   .password-options-container {
@@ -574,44 +536,21 @@ body {
   }
 
   .password-display-container {
-    margin: 0 auto;
     width: 818px;
     margin-bottom: 30px;
 
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .password-display {
     width: 612px;
     height: 56px;
     padding: 4px 36px;
-    border-radius: 32px;
 
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
-    color: var(--color-black);
-    font-weight: 400;
     font-size: 32px;
   }
   .password-copy-button {
-    width: 183.36px;
     height: 56px;
-    border-radius: 16px;
     margin-left: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 400;
-    font-size: 32px;
-
-    background-color: var(--color-cardBackgroundLight);
   }
 
   .password-options-container {
@@ -729,44 +668,20 @@ body {
   }
 
   .password-display-container {
-    margin: 0 auto;
     width: 818px;
-    margin-bottom: 30px;
 
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .password-display {
     width: 612px;
     height: 56px;
     padding: 4px 36px;
-    border-radius: 32px;
 
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
-    color: var(--color-black);
-    font-weight: 400;
     font-size: 32px;
   }
   .password-copy-button {
-    width: 183.36px;
     height: 56px;
-    border-radius: 16px;
     margin-left: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 400;
-    font-size: 32px;
-
-    background-color: var(--color-cardBackgroundLight);
   }
 
   .password-options-container {
