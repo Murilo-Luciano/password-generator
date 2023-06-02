@@ -17,6 +17,17 @@ body {
   margin: 0;
 }
 
+.hero-section {
+  margin: 0 auto;
+  color: var(--color-yellow);
+}
+.hero-section > h1 {
+  font-weight: 800;
+}
+.hero-section > p {
+  font-weight: 400;
+}
+
 .initial-button {
   margin: 0 auto;
   width: 337px;
@@ -54,19 +65,13 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .hero-section {
-    margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 284px;
     margin-bottom: 97px;
-    color: var(--color-yellow);
   }
   .hero-section > h1 {
-    font-weight: 800;
     font-size: 40px;
   }
   .hero-section > p {
-    font-weight: 400;
     font-size: 18px;
   }
 
@@ -226,19 +231,13 @@ body {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .hero-section {
-    margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 400px;
     margin-bottom: 97px;
-    color: var(--color-yellow);
   }
   .hero-section > h1 {
-    font-weight: 800;
     font-size: 40px;
   }
   .hero-section > p {
-    font-weight: 400;
     font-size: 18px;
   }
 
@@ -398,17 +397,13 @@ body {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .hero-section {
-    margin: 0 auto;
     width: 600px;
     margin-bottom: 184px;
-    color: var(--color-yellow);
   }
   .hero-section > h1 {
-    font-weight: 800;
     font-size: 52px;
   }
   .hero-section > p {
-    font-weight: 400;
     font-size: 24px;
   }
 
@@ -566,19 +561,15 @@ body {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .hero-section {
-    margin: 0 auto;
     width: 887px;
     margin-bottom: 184px;
-    color: var(--color-yellow);
   }
 
   .hero-section > h1 {
-    font-weight: 800;
     font-size: 52px;
   }
 
   .hero-section > p {
-    font-weight: 400;
     font-size: 24px;
   }
 
@@ -727,17 +718,13 @@ body {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .hero-section {
-    margin: 0 auto;
     width: 887px;
     margin-bottom: 184px;
-    color: var(--color-yellow);
   }
   .hero-section > h1 {
-    font-weight: 800;
     font-size: 52px;
   }
   .hero-section > p {
-    font-weight: 400;
     font-size: 24px;
   }
 
