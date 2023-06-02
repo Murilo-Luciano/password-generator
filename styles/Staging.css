@@ -283,12 +283,97 @@ body {
     background-color: var(--color-cardBackgroundLight);
   }
 
-  /* password options aqui !!!! */
+  .password-options-container {
+    margin: 0 auto;
+    width: 600px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 47px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    margin-bottom: 37px;
+
+    width: 400px;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-bottom: 63px;
+    width: 400px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+  .password-options-check-box {
+    width: 100%;
+    height: 50px;
+    border-radius: 16px;
+
+    padding: 6px 0px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+
+  .password-options-check-box > svg {
+    margin-left: 8px;
+  }
+
+  .password-info-container {
+    width: 400px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
 
   .articles-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    padding: 0px 64px;
 
     text-align: center;
     font-weight: 600;
@@ -307,15 +392,13 @@ body {
   }
   .articles-section > article > section > p {
     text-align: initial;
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .hero-section {
     margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 600px;
     margin-bottom: 184px;
     color: var(--color-yellow);
@@ -370,7 +453,90 @@ body {
     background-color: var(--color-cardBackgroundLight);
   }
 
-  /* password options aqui !!!! */
+  .password-options-container {
+    margin: 0 auto;
+    width: 600px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 47px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    margin-bottom: 37px;
+
+    width: 400px;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-bottom: 63px;
+    width: 400px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+  .password-options-check-box {
+    width: 100%;
+    height: 50px;
+    border-radius: 16px;
+
+    padding: 6px 0px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+
+  .password-options-check-box > svg {
+    margin-left: 8px;
+  }
+
+  .password-info-container {
+    width: 400px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
 
   .articles-section {
     display: flex;
