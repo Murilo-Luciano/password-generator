@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PasswordGeneratorDispatchContext } from "./GeneratorSection";
+import { PasswordGeneratorDispatchContext } from "../store";
 
 export default () => {
   const dispatch = useContext(PasswordGeneratorDispatchContext);

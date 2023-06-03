@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import colors from "../styles/colors";
+import { PasswordGeneratorContext } from "../store";
+import { STRENGTH_LEVELS } from "./GeneratorSection";
 
-export default (props: {
-  initialState: boolean;
-  strengthLevel: {
-    color: string;
-    interjection: string;
-  };
-}) => {
+export default (props: { initialState: boolean }) => {
+  const context = useContext(PasswordGeneratorContext);
+
+  const strengthLevel = STRENGTH_LEVELS[context.strength!];
+
   return (
     <div className="password-options-container">
       <div style={{}}>
@@ -24,24 +24,24 @@ export default (props: {
         // Abstract into function
         <div
           style={{
-            border: `2px solid ${props.strengthLevel.color}`,
-            borderColor: props.strengthLevel.color,
+            border: `2px solid ${strengthLevel.color}`,
+            borderColor: strengthLevel.color,
           }}
           className="password-info-container"
         >
           <p>
             <a
               style={{
-                color: props.strengthLevel.color,
+                color: strengthLevel.color,
               }}
             >
-              {props.strengthLevel.interjection}
+              {strengthLevel.interjection}
             </a>{" "}
             It would take an estimated
           </p>
           <p
             style={{
-              color: props.strengthLevel.color,
+              color: strengthLevel.color,
             }}
           >
             5 years

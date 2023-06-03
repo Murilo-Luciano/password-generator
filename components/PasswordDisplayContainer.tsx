@@ -1,10 +1,16 @@
-export default (props: { strengthLevel: { color: string } }) => {
+import { useContext } from "react";
+import { PasswordGeneratorContext } from "../store";
+import { STRENGTH_LEVELS } from "./GeneratorSection";
+
+export default () => {
+  const context = useContext(PasswordGeneratorContext);
+
   return (
     <div className="password-display-container">
       <div
         className="password-display"
         style={{
-          backgroundColor: props.strengthLevel.color,
+          backgroundColor: STRENGTH_LEVELS[context.strength!].color,
         }}
       >
         {"928#!D]ws83&ZtSD&4S...."}
