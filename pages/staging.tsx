@@ -1,40 +1,11 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "../components/HeroSection";
-import InitialButton from "../components/InitialButton";
-import PasswordDisplayContainer from "../components/PasswordDisplayContainer";
-import PasswordOptionsContainer from "../components/PasswordOptionsContainer";
 import colors from "../styles/colors";
 import articles from "../utils/articles";
 import Head from "next/head";
 import GeneratorSection from "../components/GeneratorSection";
 
-const STRENGTH_LEVELS = {
-  veryGood: {
-    color: colors.veryGood,
-    interjection: "Great job!",
-  },
-  strong: {
-    color: colors.strong,
-    interjection: "Well done!",
-  },
-  medium: {
-    color: colors.medium,
-    interjection: "Not bad!",
-  },
-  weak: {
-    color: colors.weak,
-    interjection: "Oops!",
-  },
-  veryWeak: {
-    color: colors.veryWeak,
-    interjection: "Uh oh!",
-  },
-};
-
 export default function Staging() {
-  const [initialState, setInitialState] = useState(false);
-  const [strengthLevel, setStrengthLevel] = useState(STRENGTH_LEVELS.veryGood);
-
   return (
     <>
       <Head>
@@ -48,10 +19,7 @@ export default function Staging() {
 
       <HeroSection />
 
-      <GeneratorSection
-        initialState={initialState}
-        strengthLevel={strengthLevel}
-      />
+      <GeneratorSection />
 
       <div style={{ height: 100 }} />
 

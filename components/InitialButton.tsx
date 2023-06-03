@@ -1,3 +1,15 @@
+import { useContext } from "react";
+import { PasswordGeneratorDispatchContext } from "./GeneratorSection";
+
 export default () => {
-  return <div className="initial-button">Generate Password</div>;
+  const dispatch = useContext(PasswordGeneratorDispatchContext);
+
+  return (
+    <div
+      className="initial-button"
+      onClick={() => dispatch({ type: "set_fetch_password", payload: true })}
+    >
+      Generate Password
+    </div>
+  );
 };
