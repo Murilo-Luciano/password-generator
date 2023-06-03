@@ -6,7 +6,7 @@ import {
 } from "../store";
 import { STRENGTH_LEVELS } from "./GeneratorSection";
 
-const LABELS = {
+const CHECK_LABELS = {
   hasNumber: "Number",
   hasSymbol: "Symbol",
   hasUppercase: "Uppercase",
@@ -36,7 +36,7 @@ export default (props: { initialState: boolean }) => {
           {Object.entries(context.options)
             .filter(([key, _]) => key != "length")
             .map(([key, value], index) => {
-              const label = LABELS[key as keyof typeof LABELS];
+              const label = CHECK_LABELS[key as keyof typeof CHECK_LABELS];
 
               return (
                 <OptionCheckBox
