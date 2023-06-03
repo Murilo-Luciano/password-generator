@@ -8,8 +8,6 @@ export default () => {
         Never struggle to come up with a strong password again
         <br />
         Our password generator takes the guesswork out of security
-        <br />
-        Generate your password now
       </p>
     </div>
   );

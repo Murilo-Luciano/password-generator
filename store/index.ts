@@ -22,10 +22,18 @@ interface PasswordGeneratorAction {
 export function reducer(
   state: PasswordGeneratorState,
   action: PasswordGeneratorAction
-) {
+): PasswordGeneratorState {
   switch (action.type) {
     case "set_fetch_password":
       return { ...state, fetchPassword: action.payload };
+    case "set_password_options":
+      return {
+        ...state,
+        options: {
+          ...state.options,
+          [action.payload.field]: action.payload.value,
+        },
+      };
     default:
       return state;
   }
