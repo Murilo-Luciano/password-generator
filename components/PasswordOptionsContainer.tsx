@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { ChangeEventHandler, useContext, useEffect, useState } from "react";
 import colors from "../styles/colors";
 import {
   PasswordGeneratorContext,
@@ -28,7 +28,9 @@ export default (props: { initialState: boolean }) => {
   return (
     <div className="password-options-container">
       <div>
-        <PasswordLength />
+        <PasswordLength
+          onChange={(value: number) => updateOptions("length", value)}
+        />
 
         <div className="password-options-check-container">
           {Object.entries(context.options)
@@ -54,24 +56,33 @@ export default (props: { initialState: boolean }) => {
   );
 };
 
-const PasswordLength = () => {
-  const SliderRangeBar = () => {
-    const [value, setValue] = useState(50);
+const PasswordLength = ({
+  onChange,
+}: {
+  onChange: (value: number) => void;
+}) => {
+  const [value, setValue] = useState(15);
+  const maxValue = 30;
+  const minValue = 1;
 
-    const handleChange = (e: any) => {
-      setValue(e.target.value);
-    };
+  useEffect(() => onChange(value), [value]);
 
-    const calculateTrackColor = () => {
-      const percentage = ((value - 0) / (100 - 0)) * 100;
-      return `linear-gradient(to right, #FFD768 ${percentage}%, #263752 ${percentage}%)`;
-    };
+  const handleChange = (e: any) => {
+    setValue(parseInt(e.target.value));
+  };
 
-    return (
+  const calculateTrackColor = () => {
+    const percentage = ((value - minValue) / (maxValue - minValue)) * 100;
+    return `linear-gradient(to right, #FFD768 ${percentage}%, #263752 ${percentage}%)`;
+  };
+
+  return (
+    <div className="password-length-container">
+      Length
       <input
         type="range"
-        min="0"
-        max="100"
+        min={minValue}
+        max={maxValue}
         value={value}
         onChange={handleChange}
         className="password-length-slider"
@@ -79,13 +90,6 @@ const PasswordLength = () => {
           background: calculateTrackColor(),
         }}
       />
-    );
-  };
-
-  return (
-    <div className="password-length-container">
-      Length
-      <SliderRangeBar />
     </div>
   );
 };
