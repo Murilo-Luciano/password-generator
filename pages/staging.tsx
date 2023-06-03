@@ -6,6 +6,7 @@ import PasswordOptionsContainer from "../components/PasswordOptionsContainer";
 import colors from "../styles/colors";
 import articles from "../utils/articles";
 import Head from "next/head";
+import GeneratorSection from "../components/GeneratorSection";
 
 const STRENGTH_LEVELS = {
   veryGood: {
@@ -45,6 +46,8 @@ export default function Staging() {
         />
       </Head>
 
+      <HeroSection />
+
       <GeneratorSection
         initialState={initialState}
         strengthLevel={strengthLevel}
@@ -58,31 +61,6 @@ export default function Staging() {
     </>
   );
 }
-
-const GeneratorSection = (props: {
-  initialState: boolean;
-  strengthLevel: { color: string; interjection: string };
-}) => {
-  return (
-    <div>
-      <HeroSection />
-
-      {props.initialState ? (
-        <InitialButton />
-      ) : (
-        // @todo: use context
-        <PasswordDisplayContainer strengthLevel={props.strengthLevel} />
-      )}
-
-      {/* @todo: use context */}
-      {/* @todo: concluir css do PasswordOptionsContainer*/}
-      <PasswordOptionsContainer
-        initialState={props.initialState}
-        strengthLevel={props.strengthLevel}
-      />
-    </div>
-  );
-};
 
 const ArticlesSection = (props: {
   articles: { title: string; paragraphs: string[] }[];
