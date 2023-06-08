@@ -13,7 +13,6 @@ const CHECK_LABELS = {
   hasLowercase: "Lowercase",
 };
 
-/**@todo: do not allow user to uncheck all options */
 export default (props: { initialState: boolean }) => {
   const context = useContext(PasswordGeneratorContext);
   const dispatch = useContext(PasswordGeneratorDispatchContext);
