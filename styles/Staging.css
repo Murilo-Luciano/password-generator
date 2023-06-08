@@ -116,6 +116,14 @@ body {
   opacity: 0.5;
 }
 
+.password-display > svg {
+  transition: transform 0.2s;
+}
+
+.password-display > svg:active {
+  transform: rotate(360deg);
+}
+
 .password-length-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
