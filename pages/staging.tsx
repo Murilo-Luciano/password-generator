@@ -64,7 +64,12 @@ const Footer = () => {
     >
       <p>
         Made by{" "}
-        <a>
+        <a
+          href="https://github.com/Murilo-Luciano"
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: "none", color: "black" }}
+        >
           <strong>Murilo</strong>
         </a>
       </p>
