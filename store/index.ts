@@ -12,6 +12,7 @@ interface PasswordGeneratorState {
     hasUppercase: boolean;
   };
   fetchPassword: boolean;
+  clickedOnGenerate: boolean;
 }
 
 interface PasswordGeneratorAction {
@@ -24,6 +25,12 @@ export function reducer(
   action: PasswordGeneratorAction
 ): PasswordGeneratorState {
   switch (action.type) {
+    case "set_generate_password":
+      return {
+        ...state,
+        fetchPassword: action.payload,
+        clickedOnGenerate: action.payload,
+      };
     case "set_fetch_password":
       return { ...state, fetchPassword: action.payload };
     case "set_password_options":
@@ -60,6 +67,7 @@ export const initialState: PasswordGeneratorState = {
     hasLowercase: true,
   },
   fetchPassword: false,
+  clickedOnGenerate: false,
 };
 
 export const PasswordGeneratorContext: Context<PasswordGeneratorState> =

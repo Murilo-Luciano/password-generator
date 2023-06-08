@@ -55,14 +55,16 @@ export default () => {
   };
 
   useEffect(() => {
-    console.log("MUDOU");
     if (state.fetchPassword) {
       fetchPassword();
     }
   }, [state]);
 
   const isOnInitialState =
-    !state.password || !state.strength || !state.estimative;
+    !state.password ||
+    !state.strength ||
+    !state.estimative ||
+    !state.clickedOnGenerate;
 
   return (
     <PasswordGeneratorContext.Provider value={state}>

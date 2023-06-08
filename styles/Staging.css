@@ -59,6 +59,14 @@ body {
   background-color: var(--color-veryWeak);
 }
 
+.initial-button:hover {
+  filter: brightness(130%);
+}
+
+.initial-button:active {
+  opacity: 0.5;
+}
+
 .password-display-container {
   margin: 0 auto;
   margin-bottom: 30px;
@@ -96,6 +104,16 @@ body {
   font-size: 32px;
 
   background-color: var(--color-cardBackgroundLight);
+}
+
+.password-copy-button:hover {
+  border: 2px solid var(--color-white);
+  box-sizing: border-box;
+  filter: brightness(110%);
+}
+
+.password-copy-button:active {
+  opacity: 0.5;
 }
 
 .password-length-slider::-webkit-slider-thumb {

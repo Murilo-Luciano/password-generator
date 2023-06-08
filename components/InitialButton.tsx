@@ -7,7 +7,7 @@ export default () => {
   return (
     <div
       className="initial-button"
-      onClick={() => dispatch({ type: "set_fetch_password", payload: true })}
+      onClick={() => dispatch({ type: "set_generate_password", payload: true })}
     >
       Generate Password
     </div>
