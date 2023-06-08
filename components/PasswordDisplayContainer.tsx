@@ -5,7 +5,8 @@ import { STRENGTH_LEVELS } from "./GeneratorSection";
 export default () => {
   const context = useContext(PasswordGeneratorContext);
 
-  const password = "928#!D]ws83&ZtSD&4S";
+  // const password = "928#!D]ws83&ZtSD&4S";
+  const password = context.password!;
 
   const displayPassword =
     password.length >= 20 ? password.slice(0, 20).concat("...") : password;

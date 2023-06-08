@@ -50,7 +50,10 @@ export default (props: { initialState: boolean }) => {
         </div>
       </div>
       {props.initialState ? null : (
-        <InfoSection strengthLevel={strengthLevel} estimative="" />
+        <InfoSection
+          strengthLevel={strengthLevel}
+          estimative={context.estimative!}
+        />
       )}
     </div>
   );
@@ -184,8 +187,7 @@ const InfoSection = (props: {
           color: props.strengthLevel.color,
         }}
       >
-        5 years
-        {/* props.interjection */}
+        {props.estimative}
       </p>
 
       <p>for a hacker to crack your password</p>

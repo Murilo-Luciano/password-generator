@@ -34,6 +34,14 @@ export function reducer(
           [action.payload.field]: action.payload.value,
         },
       };
+    case "set_generated_password":
+      return {
+        ...state,
+        password: action.payload.password,
+        estimative: action.payload.estimative,
+        strength: action.payload.strength,
+        fetchPassword: false,
+      };
     default:
       return state;
   }
