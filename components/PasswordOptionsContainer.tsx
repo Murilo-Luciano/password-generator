@@ -20,11 +20,22 @@ export default (props: { initialState: boolean }) => {
 
   const strengthLevel = STRENGTH_LEVELS[context.strength!];
 
-  const updateOptions = (option: string, value: boolean | number) =>
+  const updateOptions = (option: string, value: boolean | number) => {
+    const { options } = context;
+    const optionsValues = Object.keys(CHECK_LABELS).map(
+      (key) => options[key as keyof typeof options]
+    );
+
+    const checkedNumber = optionsValues.filter((value) => value);
+
+    if (!value && checkedNumber.length == 1)
+      throw new Error("Check options cant be all unchecked");
+
     dispatch({
       type: "set_password_options",
       payload: { field: option, value },
     });
+  };
 
   return (
     <div className="password-options-container">
@@ -126,7 +137,11 @@ const Checkbox = ({
   const [checked, setChecked] = useState(defaultValue);
 
   useEffect(() => {
-    onClick(checked);
+    try {
+      onClick(checked);
+    } catch (error) {
+      setChecked(!checked);
+    }
   }, [checked]);
 
   return (
