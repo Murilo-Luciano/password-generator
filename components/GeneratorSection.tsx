@@ -38,18 +38,26 @@ export const STRENGTH_LEVELS = {
 export default () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    if (state.fetchPassword) {
-      // fetch
+  const fetchPassword = async () => {
+    const res = await fetch(
+      `/api/passwordGeneratorV2?length=${state.options.length}&hasNumber=${state.options.hasNumber}&hasSymbol=${state.options.hasSymbol}&hasLowercase=${state.options.hasLowercase}&hasUppercase=${state.options.hasUppercase}`
+    );
 
-      dispatch({
-        type: "set_generated_password",
-        payload: {
-          password: "TeStE1234!!@@##",
-          estimative: "1M years",
-          strength: "medium",
-        },
-      });
+    const { password, estimative, strength } = await res.json();
+    dispatch({
+      type: "set_generated_password",
+      payload: {
+        password: password,
+        estimative: estimative,
+        strength: strength,
+      },
+    });
+  };
+
+  useEffect(() => {
+    console.log("MUDOU");
+    if (state.fetchPassword) {
+      fetchPassword();
     }
   }, [state]);
 

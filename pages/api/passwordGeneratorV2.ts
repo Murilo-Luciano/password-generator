@@ -133,22 +133,28 @@ const getEstimates = (password: string, options: PasswordOptionProps) => {
 };
 
 function getStrength(timeEstimated: { value: number; unit: UnitOfTime }) {
-  const STRENGTHS = {
-    veryWeak: (timeEstimated: { value: number; unit: UnitOfTime }) =>
-      timeEstimated.value <= 0 && timeEstimated.unit == UnitOfTime.Second,
-    weak: (timeEstimated: { value: number; unit: UnitOfTime }) =>
-      timeEstimated.value > 0,
-    medium: (timeEstimated: { value: number; unit: UnitOfTime }) =>
-      timeEstimated.value > 1 && timeEstimated.unit == UnitOfTime.Year,
-    strong: (timeEstimated: { value: number; unit: UnitOfTime }) =>
-      timeEstimated.value > 5 && timeEstimated.unit == UnitOfTime.Year,
-    veryStrong: (timeEstimated: { value: number; unit: UnitOfTime }) =>
-      timeEstimated.value > 10 && timeEstimated.unit == UnitOfTime.Year,
+  // repeated code
+  /**@todo: refactor */
+  const conversionFactors: { [key: string]: number } = {
+    year: 3600 * 24 * 365,
+    month: 3600 * 24 * 30,
+    day: 3600 * 24,
+    hour: 3600,
+    minute: 60,
+    second: 1,
   };
 
-  return (
-    _.findLastKey(STRENGTHS, (checker) => checker(timeEstimated)) || "medium"
-  );
+  const seconds = timeEstimated.value * conversionFactors[timeEstimated.unit];
+
+  const STRENGTHS = {
+    veryWeak: (seconds: number) => seconds < conversionFactors.day,
+    weak: (seconds: number) => seconds < conversionFactors.month * 3,
+    medium: (seconds: number) => seconds < conversionFactors.year * 5,
+    strong: (seconds: number) => seconds < conversionFactors.year * 10,
+    veryGood: (seconds: number) => seconds >= conversionFactors.year * 10,
+  };
+
+  return _.findKey(STRENGTHS, (checker) => checker(seconds)) || "medium";
 }
 
 function getEstimatedTime(totalSecondsToBreak: number): {
@@ -193,7 +199,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       req.query;
 
     if (!length) {
-      res.status(400).send(undefined);
+      res.status(400).send("Length must be present");
+      return;
+    }
+
+    if (_.toInteger(length) >= 30) {
+      res.status(400).send("Length must be lower than 30");
       return;
     }
 

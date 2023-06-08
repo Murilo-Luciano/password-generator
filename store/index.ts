@@ -33,6 +33,7 @@ export function reducer(
           ...state.options,
           [action.payload.field]: action.payload.value,
         },
+        fetchPassword: true,
       };
     case "set_generated_password":
       return {
