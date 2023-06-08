@@ -54,8 +54,8 @@ export const initialState: PasswordGeneratorState = {
   estimative: undefined,
   options: {
     length: 15,
-    hasNumber: false,
-    hasSymbol: true,
+    hasNumber: true,
+    hasSymbol: false,
     hasUppercase: false,
     hasLowercase: true,
   },

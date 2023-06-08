@@ -21,7 +21,7 @@ export default function Staging() {
 
       <GeneratorSection />
 
-      <div style={{ height: 100 }} />
+      <div style={{ height: 140 }} />
 
       <ArticlesSection articles={articles} />
 
