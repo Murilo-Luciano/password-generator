@@ -1,4 +1,4 @@
-import { Context, Dispatch, createContext, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import InitialButton from "./InitialButton";
 import PasswordDisplayContainer from "./PasswordDisplayContainer";
 import PasswordOptionsContainer from "./PasswordOptionsContainer";
@@ -39,19 +39,27 @@ export default () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchPassword = async () => {
-    const res = await fetch(
-      `/api/passwordGeneratorV2?length=${state.options.length}&hasNumber=${state.options.hasNumber}&hasSymbol=${state.options.hasSymbol}&hasLowercase=${state.options.hasLowercase}&hasUppercase=${state.options.hasUppercase}`
-    );
+    try {
+      const res = await fetch(
+        `/api/passwordGeneratorV2?length=${state.options.length}&hasNumber=${state.options.hasNumber}&hasSymbol=${state.options.hasSymbol}&hasLowercase=${state.options.hasLowercase}&hasUppercase=${state.options.hasUppercase}`
+      );
 
-    const { password, estimative, strength } = await res.json();
-    dispatch({
-      type: "set_generated_password",
-      payload: {
-        password: password,
-        estimative: estimative,
-        strength: strength,
-      },
-    });
+      if (!res || res.status == 400) {
+        dispatch({ type: "set_error_handling", payload: {} });
+      }
+
+      const { password, estimative, strength } = await res.json();
+      dispatch({
+        type: "set_generated_password",
+        payload: {
+          password: password,
+          estimative: estimative,
+          strength: strength,
+        },
+      });
+    } catch (error) {
+      dispatch({ type: "set_error_handling", payload: {} });
+    }
   };
 
   useEffect(() => {
@@ -70,6 +78,11 @@ export default () => {
     <PasswordGeneratorContext.Provider value={state}>
       <PasswordGeneratorDispatchContext.Provider value={dispatch}>
         <div>
+          {state.hasError ? (
+            <h3 style={{ textAlign: "center" }}>
+              Oops! An error ocurred. Try again
+            </h3>
+          ) : null}
           {isOnInitialState ? <InitialButton /> : <PasswordDisplayContainer />}
 
           <PasswordOptionsContainer initialState={isOnInitialState} />

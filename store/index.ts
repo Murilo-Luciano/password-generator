@@ -13,6 +13,7 @@ interface PasswordGeneratorState {
   };
   fetchPassword: boolean;
   clickedOnGenerate: boolean;
+  hasError: boolean;
 }
 
 interface PasswordGeneratorAction {
@@ -30,6 +31,7 @@ export function reducer(
         ...state,
         fetchPassword: action.payload,
         clickedOnGenerate: action.payload,
+        hasError: false,
       };
     case "set_fetch_password":
       return { ...state, fetchPassword: action.payload };
@@ -50,6 +52,18 @@ export function reducer(
         strength: action.payload.strength,
         fetchPassword: false,
       };
+    case "set_error_handling": {
+      return {
+        ...initialState,
+        hasError: true,
+      };
+    }
+    case "set_error_waring_timeout": {
+      return {
+        ...state,
+        hasError: action.payload,
+      };
+    }
     default:
       return state;
   }
@@ -68,6 +82,7 @@ export const initialState: PasswordGeneratorState = {
   },
   fetchPassword: false,
   clickedOnGenerate: false,
+  hasError: false,
 };
 
 export const PasswordGeneratorContext: Context<PasswordGeneratorState> =
