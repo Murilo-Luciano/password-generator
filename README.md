@@ -3,7 +3,7 @@
 
 ------
 
-![image](https://user-images.githubusercontent.com/61948229/219883760-6b485626-fd43-408f-8c99-22b573da49cf.png)
+![image](https://github.com/Murilo-Luciano/password-generator/assets/61948229/1e3af14c-5cc4-46a3-87b9-e1735c4a42de)
 
 ## Description
 This project is a React application for generating random passwords with certain characteristics. It uses the Material-UI library for styling and consists of a single page with a header, password options, and password display.
