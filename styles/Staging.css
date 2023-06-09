@@ -1,0 +1,852 @@
+/* @todo: declarar toda definição igual de password-options-container e articles-section em um lugar ( igual feito com hero-section e password-display-container ) */
+
+:root {
+  --color-background: #101b30;
+  --color-whiteBackground: #d9d9d9;
+  --color-cardBackground: #18253f;
+  --color-cardBackgroundLight: #263752;
+  --color-yellow: #ffd768;
+  --color-veryGood: #44d2a7;
+  --color-strong: #f5e445;
+  --color-medium: #ffc94d;
+  --color-weak: #ff9b5c;
+  --color-veryWeak: #ff6565;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  font-family: "Inter";
+  font-style: normal;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  background: var(--color-background);
+}
+
+body {
+  margin: 0;
+}
+
+.hero-section {
+  margin: 0 auto;
+  color: var(--color-yellow);
+
+  -webkit-user-select: text; /* Safari */
+  -ms-user-select: text; /* IE 10 and IE 11 */
+  user-select: text; /* Standard syntax */
+}
+.hero-section > h1 {
+  font-weight: 800;
+}
+.hero-section > p {
+  font-weight: 400;
+}
+
+.initial-button {
+  margin: 0 auto;
+  width: 337px;
+  margin-bottom: 98px;
+  border-radius: 16px;
+
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  text-align: center;
+  font-weight: 400;
+  font-size: 32px;
+
+  background-color: var(--color-veryWeak);
+}
+
+.initial-button:hover {
+  filter: brightness(130%);
+}
+
+.initial-button:active {
+  opacity: 0.5;
+}
+
+.password-display-container {
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-display {
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--color-black);
+  font-weight: 400;
+
+  -webkit-user-select: text; /* Safari */
+  -ms-user-select: text; /* IE 10 and IE 11 */
+  user-select: text; /* Standard syntax */
+}
+.password-copy-button {
+  width: 183.36px;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 32px;
+
+  background-color: var(--color-cardBackgroundLight);
+}
+
+.password-copy-button:hover {
+  border: 2px solid var(--color-white);
+  box-sizing: border-box;
+  filter: brightness(110%);
+}
+
+.password-copy-button:active {
+  opacity: 0.5;
+}
+
+.password-display > svg {
+  transition: transform 0.2s;
+}
+
+.password-display > svg:active {
+  transform: rotate(360deg);
+}
+
+.password-length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffd768;
+  cursor: pointer;
+}
+
+.password-length-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffd768;
+  cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    width: 284px;
+    margin-bottom: 97px;
+  }
+  .hero-section > h1 {
+    font-size: 40px;
+  }
+  .hero-section > p {
+    font-size: 18px;
+  }
+
+  .password-display-container {
+    width: 284px;
+    height: 122px;
+
+    flex-direction: column;
+  }
+  .password-display {
+    width: 284px;
+    height: 34px;
+    padding: 4px 22px;
+
+    font-size: 18px;
+  }
+  .password-copy-button {
+    height: 50px;
+  }
+
+  .password-options-container {
+    margin: 0 auto;
+    width: 284px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 47px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    margin-bottom: 37px;
+
+    width: 252px;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-bottom: 63px;
+    width: 252px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .password-options-check-box {
+    width: 100%;
+    height: 36px;
+    border-radius: 16px;
+
+    padding: 6px 0px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+
+  .password-options-check-box > svg {
+    margin-left: 8px;
+  }
+
+  .password-info-container {
+    width: 251px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    text-align: center;
+    font-weight: 400;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 40px;
+  }
+  .articles-section > article > section {
+    padding: 10px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .hero-section {
+    width: 400px;
+    margin-bottom: 97px;
+  }
+  .hero-section > h1 {
+    font-size: 40px;
+  }
+  .hero-section > p {
+    font-size: 18px;
+  }
+
+  .password-display-container {
+    width: 818px;
+
+    flex-direction: row;
+  }
+  .password-display {
+    width: 612px;
+    height: 56px;
+    padding: 4px 36px;
+
+    font-size: 32px;
+  }
+  .password-copy-button {
+    height: 56px;
+    margin-left: 20px;
+  }
+
+  .password-options-container {
+    margin: 0 auto;
+    width: 600px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 47px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    margin-bottom: 37px;
+
+    width: 400px;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-bottom: 63px;
+    width: 400px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+  .password-options-check-box {
+    width: 100%;
+    height: 50px;
+    border-radius: 16px;
+
+    padding: 6px 0px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+
+  .password-options-check-box > svg {
+    margin-left: 8px;
+  }
+
+  .password-info-container {
+    width: 400px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0px 64px;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 20px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .hero-section {
+    width: 600px;
+    margin-bottom: 184px;
+  }
+  .hero-section > h1 {
+    font-size: 52px;
+  }
+  .hero-section > p {
+    font-size: 24px;
+  }
+
+  .password-display-container {
+    width: 818px;
+
+    flex-direction: row;
+  }
+  .password-display {
+    width: 612px;
+    height: 56px;
+    padding: 4px 36px;
+
+    font-size: 32px;
+  }
+  .password-copy-button {
+    height: 56px;
+    margin-left: 20px;
+  }
+
+  .password-options-container {
+    margin: 0 auto;
+    width: 600px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 47px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    margin-bottom: 37px;
+
+    width: 400px;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-bottom: 63px;
+    width: 400px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+  .password-options-check-box {
+    width: 100%;
+    height: 50px;
+    border-radius: 16px;
+
+    padding: 6px 0px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+
+  .password-options-check-box > svg {
+    margin-left: 8px;
+  }
+
+  .password-info-container {
+    width: 400px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero-section {
+    width: 887px;
+    margin-bottom: 184px;
+  }
+
+  .hero-section > h1 {
+    font-size: 52px;
+  }
+
+  .hero-section > p {
+    font-size: 24px;
+  }
+
+  .password-display-container {
+    width: 818px;
+    margin-bottom: 30px;
+
+    flex-direction: row;
+  }
+  .password-display {
+    width: 612px;
+    height: 56px;
+    padding: 4px 36px;
+
+    font-size: 32px;
+  }
+  .password-copy-button {
+    height: 56px;
+    margin-left: 20px;
+  }
+
+  .password-options-container {
+    margin: 0 auto;
+    width: 1030px; /* usar padding na div externa */
+    border-radius: 24px;
+
+    padding: 68px 211px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    width: 608px;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-top: 66px;
+    width: 560px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 79px;
+  }
+  .password-options-check-box {
+    width: 214px;
+    height: 24px;
+    border-radius: 16px;
+
+    padding: 6px 18px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container {
+    width: 281px;
+    border-radius: 16px;
+    margin-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .hero-section {
+    width: 887px;
+    margin-bottom: 184px;
+  }
+  .hero-section > h1 {
+    font-size: 52px;
+  }
+  .hero-section > p {
+    font-size: 24px;
+  }
+
+  .password-display-container {
+    width: 818px;
+
+    flex-direction: row;
+  }
+  .password-display {
+    width: 612px;
+    height: 56px;
+    padding: 4px 36px;
+
+    font-size: 32px;
+  }
+  .password-copy-button {
+    height: 56px;
+    margin-left: 20px;
+  }
+
+  .password-options-container {
+    margin: 0 auto;
+    width: 1030px; /* usar padding na div externa ? */
+    border-radius: 24px;
+
+    padding: 68px 211px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-cardBackground);
+  }
+  .password-length-container {
+    margin: 0 auto;
+    width: 608px;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+  }
+  .password-length-slider {
+    width: 100%;
+    height: 8px;
+    outline: none;
+    appearance: none;
+  }
+  .password-options-check-container {
+    margin: 0 auto;
+    margin-top: 66px;
+    width: 560px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 79px;
+  }
+  .password-options-check-box {
+    width: 214px;
+    height: 24px;
+    border-radius: 16px;
+
+    padding: 6px 18px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container {
+    width: 281px;
+    border-radius: 16px;
+    margin-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    background-color: var(--color-cardBackgroundLight);
+  }
+  .password-info-container > p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .password-info-container > a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .articles-section {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-black);
+
+    background-color: var(--color-whiteBackground);
+  }
+  .articles-section > article {
+    margin-bottom: 80px;
+  }
+  .articles-section > article > section {
+    max-width: 896px;
+  }
+  .articles-section > article > section > h1 {
+    font-size: 24px;
+  }
+  .articles-section > article > section > p {
+    text-align: initial;
+    font-size: 16px;
+  }
+}
