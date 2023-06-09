@@ -23,7 +23,7 @@ const ReloadIcon = ({ onClick }: { onClick: () => void }) => {
   );
 };
 
-export default () => {
+export default function PasswordDisplayContainer() {
   const context = useContext(PasswordGeneratorContext);
   const dispatch = useContext(PasswordGeneratorDispatchContext);
 
@@ -55,4 +55,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

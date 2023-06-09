@@ -33,7 +33,7 @@ export const STRENGTH_LEVELS = {
   },
 };
 
-export default () => {
+export default function GeneratorSection() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchPassword = async () => {
@@ -88,4 +88,4 @@ export default () => {
       </PasswordGeneratorDispatchContext.Provider>
     </PasswordGeneratorContext.Provider>
   );
-};
+}

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PasswordGeneratorDispatchContext } from "../store";
 
-export default () => {
+export default function InitialButton() {
   const dispatch = useContext(PasswordGeneratorDispatchContext);
 
   return (
@@ -12,4 +12,4 @@ export default () => {
       Generate Password
     </div>
   );
-};
+}

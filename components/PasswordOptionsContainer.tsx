@@ -13,7 +13,9 @@ const CHECK_LABELS = {
   hasLowercase: "Lowercase",
 };
 
-export default (props: { initialState: boolean }) => {
+export default function PasswordDisplayContainer(props: {
+  initialState: boolean;
+}) {
   const context = useContext(PasswordGeneratorContext);
   const dispatch = useContext(PasswordGeneratorDispatchContext);
 
@@ -68,7 +70,7 @@ export default (props: { initialState: boolean }) => {
       )}
     </div>
   );
-};
+}
 
 const PasswordLength = ({
   onChange,

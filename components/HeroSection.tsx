@@ -1,6 +1,4 @@
-import colors from "../styles/colors";
-
-export default () => {
+export default function HeroSection() {
   return (
     <div className="hero-section">
       <h1>Get Strong Passwords in Seconds</h1>
@@ -11,4 +9,4 @@ export default () => {
       </p>
     </div>
   );
-};
+}
