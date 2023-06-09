@@ -33,15 +33,13 @@ export const STRENGTH_LEVELS = {
   },
 };
 
-// E se o strength que veio do back não existir aqui no front ? Setar um padrão
-
 export default () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchPassword = async () => {
     try {
       const res = await fetch(
-        `/api/passwordGeneratorV2?length=${state.options.length}&hasNumber=${state.options.hasNumber}&hasSymbol=${state.options.hasSymbol}&hasLowercase=${state.options.hasLowercase}&hasUppercase=${state.options.hasUppercase}`
+        `/api/v2/passwordGenerator?length=${state.options.length}&hasNumber=${state.options.hasNumber}&hasSymbol=${state.options.hasSymbol}&hasLowercase=${state.options.hasLowercase}&hasUppercase=${state.options.hasUppercase}`
       );
 
       if (!res || res.status == 400) {
