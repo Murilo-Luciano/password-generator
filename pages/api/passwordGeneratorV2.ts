@@ -203,7 +203,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return;
     }
 
-    if (_.toInteger(length) >= 30) {
+    if (_.toInteger(length) > 30) {
       res.status(400).send("Length must be lower than 30");
       return;
     }
