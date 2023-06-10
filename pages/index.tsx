@@ -11,14 +11,28 @@ export default function Staging() {
       <Head>
         <title>Passwords Generator</title>
         <meta name="description" content="Password generator" />
+
         <link
           href="https://fonts.googleapis.com/css?family=Inter"
           rel="stylesheet"
         />
+
         <link rel="icon" type="image/png" sizes="16x16" href="/icon16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon32.png" />
         <link rel="icon" type="image/png" sizes="48x48" href="/icon48.png" />
         <link rel="icon" type="image/png" sizes="64x64" href="/icon64.png" />
+
+        <meta property="og:title" content="Get Strong Passwords in Seconds" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="Never struggle to come up with a strong password again. Our password generator takes the guesswork out of security"
+        />
+        <meta
+          property="og:url"
+          content="https://www.passwords-generator.com/"
+        />
+        <meta property="og:site_name" content="Password generator" />
       </Head>
 
       <HeroSection />
