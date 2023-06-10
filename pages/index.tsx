@@ -12,11 +12,6 @@ export default function Staging() {
         <title>Passwords Generator</title>
         <meta name="description" content="Password generator" />
 
-        <link
-          href="https://fonts.googleapis.com/css?family=Inter"
-          rel="stylesheet"
-        />
-
         <link rel="icon" type="image/png" sizes="16x16" href="/icon16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon32.png" />
         <link rel="icon" type="image/png" sizes="48x48" href="/icon48.png" />
@@ -57,8 +52,8 @@ const ArticlesSection = (props: {
         <article key={index}>
           <section>
             <h1>{article.title}</h1>
-            {article.paragraphs.map((paragraph) => (
-              <p key={index}>{paragraph}</p>
+            {article.paragraphs.map((paragraph, pIndex) => (
+              <p key={pIndex}>{paragraph}</p>
             ))}
           </section>
         </article>
