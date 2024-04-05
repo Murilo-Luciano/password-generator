@@ -48,7 +48,7 @@ export default function PasswordDisplayContainer() {
         />
       </div>
       <div
-        className="password-copy-button"
+        className="password-copy-button" title="Our password generator doesn't save any of the generated data"
         onClick={() => navigator.clipboard.writeText(password)}
       >
         COPY
