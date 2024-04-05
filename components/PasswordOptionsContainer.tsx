@@ -94,7 +94,10 @@ const PasswordLength = ({
 
   return (
     <div className="password-length-container">
-      Length : {value} Letters
+      <div className="lenght-sub-container">
+        <p>Length</p>
+        <p>{value}</p>
+      </div>
       <input
         type="range"
         min={minValue}
